@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>An awsome tooltip</title>
+    <style>
+        .text {
+            font-size: 20px;
+        }
+
+        .tooltip {
+            display: inline-block;
+            margin: 40px 0;
+            position: relative;
+            border-bottom: 2px dotted #FF5722;
+        }
+
+        .tooltip .tooltiptxt {
+            visibility: hidden;
+            width: 200px;
+            background-color: #FF5722;
+            color: #FFFFFF;
+            text-align: left;
+            border-radius: 6px;
+            padding: 5px;
+
+            /* position */
+
+            position: absolute;
+            bottom: 120%; /*uwzględnia wartość arrow */
+            left: 50%;
+            z-index: 1;
+            margin-left: -100px; /* (200/2=100) */
+        }
+
+        .tooltip:hover .tooltiptxt {
+            visibility: visible;
+        }
+
+        .tooltip .tooltiptxt:after {
+            content: " ";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #FF5722 transparent transparent transparent;
+        }
+    </style>
+</head>
+<body style="text-align:center">
+<div class="text">
+    It's an awsome
+    <div class="tooltip">tooltip.
+        <span class="tooltiptxt">It's so cool</span>
+    </div>
+</div>
+</body>
+</html>
